@@ -1,0 +1,25 @@
+[package]
+name = "bevy-test"
+version = "0.1.0"
+authors = ["Kayton Fletcher <kayton@fastmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = [
+    "bevy/render",
+    "bevy/bevy_wgpu",
+    "bevy/bevy_winit",
+    "bevy/bevy_gilrs",
+    "bevy/bevy_gltf",
+    "bevy/png",
+    "bevy/hdr",
+    "bevy/x11"]
+
+[dependencies]
+bevy = { git = "https://github.com/bevyengine/bevy", default-features = false }
+bevy_kira_audio = { git = "https://github.com/NiklasEi/bevy_kira_audio", branch = "bevy_main" }
+
+[patch.'https://github.com/bevyengine/bevy']
+bevy = { path = "../bevy" }
